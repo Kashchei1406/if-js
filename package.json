@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/Kashchei1406/if-js#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
     "eslint": "^8.14.0",
     "husky": "^7.0.4",
     "prettier": "2.6.2"
