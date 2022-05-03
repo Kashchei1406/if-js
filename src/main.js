@@ -38,7 +38,7 @@ for (let i = 0; i < arr2.length; i++) {
 }
 
 for (let i = 0; i < arr2.length; i++) {
-  if (arr2[i] % 2 === 0) {
+  if (arr2[i] % 2 === 0)
     console.log(arr2[i]);
   }
 }
