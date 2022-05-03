@@ -27,6 +27,7 @@ let sum = null;
 for (let i = 0; i < arr.length; i++) {
   sum += arr[i];
 }
+
 console.log(sum);
 
 let arr2 = [2, 5, 8, 15, 0, 6, 20, 3];
