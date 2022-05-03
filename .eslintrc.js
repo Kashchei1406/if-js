@@ -5,7 +5,7 @@
             browser: true,
             node: true,
         },
-        extends: ['airbnb', 'plugin:jest/recommended', 'jest-enzyme'],
+        extends: ['airbnb',],
         plugins: [
             'babel',
             'import',
