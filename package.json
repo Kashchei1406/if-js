@@ -8,7 +8,8 @@
     "prettier": "prettier --write src/**/*.js",
     "lint": "eslint --debug ./src",
     "lint:write": "eslint --debug ./src --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "app": "prettier --write src/**/*.js && eslint --debug ./src --fix"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
+      "pre-commit": "npm test",
+      "pre-push": "npm test "
     }
   }
 }
