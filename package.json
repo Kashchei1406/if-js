@@ -6,8 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --write src/**/*.js",
-    "lint": "eslint --debug src/",
-    "lint:write": "eslint --debug src/ --fix"
+    "lint": "eslint --debug ./src",
+    "lint:write": "eslint --debug ./src --fix",
+    "prepare": "husky install",
+    "app": "prettier --write src/**/*.js && eslint --debug ./src --fix"
   },
   "repository": {
     "type": "git",
@@ -21,12 +23,22 @@
   "homepage": "https://github.com/Kashchei1406/if-js#readme",
   "devDependencies": {
     "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.5",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "prettier": "2.6.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm test",
+      "pre-push": "npm test "
     }
   }
 }
