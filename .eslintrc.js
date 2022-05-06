@@ -8,7 +8,6 @@
         plugins: [
             'babel',
             'import',
-            'react',
         ],
         parserOptions: {
             ecmaVersion: 6,
