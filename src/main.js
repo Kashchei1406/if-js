@@ -43,9 +43,8 @@ for (let i = 0; i < arr2.length; i += 1) {
 }
 // !!!HomeWork-3!!!
 function palindrome(str) {
-  str.toLowerCase();
-  const reverseStr = str.toLowerCase().split('').reverse().join('');
-  return console.log(str === reverseStr);
+  const reversStr = str.toLowerCase().split('').reverse().join('');
+  console.log(str === reversStr);
 }
 
 const testWord = 'шалаш';
@@ -54,18 +53,22 @@ palindrome(testWord);
 function min(a, b) {
   return a < b ? a : b;
 }
+
 console.log(min(11, 20));
 
 function max(a, y) {
   return a > y ? a : y;
 }
+
 console.log(max(10, 21));
 
 function randomArraysMaker() {
   const randomArray = [];
+
   for (let i = 0; i < 10; i += 1) {
     randomArray[i] = Math.floor(Math.random() * 100);
   }
+
   return randomArray;
 }
 
@@ -76,12 +79,17 @@ const changedArray = randomArray.map((item) => String(item).replaceAll('0', 'zer
 console.log(changedArray);
 
 function zero(array) {
-  const newArray = array;
-  for (let i = 0; i < newArray.length; i += 1) {
-    if (newArray[i] % 10 === 0 || newArray[i] === 0) {
-      newArray[i] = String(newArray[i]).replace('0', 'zero');
+  const newArray = [];
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] % 10 === 0 || array[i] === 0) {
+      newArray[i] = String(array[i]).replace('0', 'zero');
+    } else {
+      newArray[i] = array[i];
     }
   }
+
   return newArray;
 }
+
 console.log(zero(randomArray));
