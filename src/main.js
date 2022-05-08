@@ -23,7 +23,7 @@ Boolean(test);
 console.log(test);
 
 const arr = [2, 3, 5, 8];
-let sum = 1;
+let sum = null;
 for (let i = 0; i < arr.length; i += 1) {
   sum += arr[i];
 }
@@ -41,3 +41,55 @@ for (let i = 0; i < arr2.length; i += 1) {
     console.log(`2. ${arr2[i]}`);
   }
 }
+// !!!HomeWork-3!!!
+function palindrome(str) {
+  const reversStr = str.toLowerCase().split('').reverse().join('');
+  console.log(str === reversStr);
+}
+
+const testWord = 'шалаш';
+palindrome(testWord);
+
+function min(a, b) {
+  return a < b ? a : b;
+}
+
+console.log(min(11, 20));
+
+function max(a, y) {
+  return a > y ? a : y;
+}
+
+console.log(max(10, 21));
+
+function randomArraysMaker() {
+  const randomArray = [];
+
+  for (let i = 0; i < 10; i += 1) {
+    randomArray[i] = Math.floor(Math.random() * 100);
+  }
+
+  return randomArray;
+}
+
+const randomArray = randomArraysMaker();
+
+// solved the task using the arrow function
+const changedArray = randomArray.map((item) => String(item).replaceAll('0', 'zero'));
+console.log(changedArray);
+
+function zero(array) {
+  const newArray = [];
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] % 10 === 0 || array[i] === 0) {
+      newArray[i] = String(array[i]).replace('0', 'zero');
+    } else {
+      newArray[i] = array[i];
+    }
+  }
+
+  return newArray;
+}
+
+console.log(zero(randomArray));
