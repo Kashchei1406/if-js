@@ -1,3 +1,5 @@
+import * as fun from './functionsFortest';
+
 let user = 'John Doe';
 console.log(user);
 
@@ -42,45 +44,30 @@ for (let i = 0; i < arr2.length; i += 1) {
   }
 }
 // !!!HomeWork-3!!!
-function palindrome(str) {
-  const reversStr = str.toLowerCase().split('').reverse().join('');
-  console.log(str === reversStr);
-}
 
 const testWord = 'шалаш';
-palindrome(testWord);
+console.log(fun.palindrome(testWord));
 
-function min(a, b) {
-  return a < b ? a : b;
-}
-
-console.log(min(11, 20));
-
-function max(a, y) {
-  return a > y ? a : y;
-}
-
-console.log(max(10, 21));
+console.log(fun.min(11, 20));
+console.log(fun.max(10, 21));
 
 function randomArraysMaker() {
   const randomArray = [];
-
   for (let i = 0; i < 10; i += 1) {
     randomArray[i] = Math.floor(Math.random() * 100);
   }
-
   return randomArray;
 }
-
 const randomArray = randomArraysMaker();
 
 // solved the task using the arrow function
+
 const changedArray = randomArray.map((item) => String(item).replaceAll('0', 'zero'));
+
 console.log(changedArray);
 
 function zero(array) {
   const newArray = [];
-
   for (let i = 0; i < array.length; i += 1) {
     if (array[i] % 10 === 0 || array[i] === 0) {
       newArray[i] = String(array[i]).replace('0', 'zero');
@@ -88,8 +75,24 @@ function zero(array) {
       newArray[i] = array[i];
     }
   }
-
   return newArray;
 }
-
 console.log(zero(randomArray));
+
+// !!!HomeWork-4!!!
+
+console.log(fun.sum1(5)(2));
+
+const text1 = document.getElementById('text1');
+const text2 = document.getElementById('text2');
+const text3 = document.getElementById('text3');
+
+const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+
+const changeColor1 = fun.changeColor(colors);
+const changeColor2 = fun.changeColor(colors);
+const changeColor3 = fun.changeColor(colors);
+
+text1.addEventListener('click', changeColor1);
+text2.addEventListener('click', changeColor2);
+text3.addEventListener('click', changeColor3);
