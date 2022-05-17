@@ -6,7 +6,7 @@ module.exports = {
             browser: true,
             node: true,
         },
-        extends: ['airbnb',],
+        extends: ['airbnb'],
         plugins: [
             'babel',
             'import',
@@ -21,4 +21,5 @@ module.exports = {
      rules: {
          "no-console": "off"
      }
+
  }

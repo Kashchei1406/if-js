@@ -20,14 +20,14 @@ test('test function min which returns maximal number', () => {
 });
 
 
-describe('tet sum function wit closers', () =>{
+describe('tet sum function wit closers', () => {
   test('test sum with two params', () => {
     expect(sum1(5)(2)).toBe(7);
   })
-  test('test sum with one param', () =>{
+  test('test sum with one param', () => {
     expect(sum1(5)()).toBe(5);
   })
-  test('test sum without params', () =>{
+  test('test sum without params', () => {
     expect(sum1()).toBeNull();
   })
 })

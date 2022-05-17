@@ -31,7 +31,7 @@ export function changeColor(colors) {
   let i = 0;
 
   return (event) => {
-    const elEvent = event;
+    const elEvent = event.target.style.color;
     elEvent.target.style.color = colors[i];
     i += 1;
     if (i >= colors.length) i = 0;
