@@ -1,10 +1,12 @@
- module.exports = {
+const {assertBabelrcSearch} = require("@babel/core/lib/config/validation/option-assertions");
+module.exports = {
         env: {
+            "jest": true,
             es6: true,
             browser: true,
             node: true,
         },
-        extends: ['airbnb',],
+        extends: ['airbnb'],
         plugins: [
             'babel',
             'import',
@@ -19,4 +21,5 @@
      rules: {
          "no-console": "off"
      }
+
  }
