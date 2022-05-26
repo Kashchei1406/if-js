@@ -1,4 +1,4 @@
-import { palindrome, min, max, sum1, changeColor  } from '../src/functionsFortest';
+import { palindrome, min, max, sum1 } from '../src/functionsFortest';
 
 describe('test palindrome', () => {
   test('palindrome positive', () => {

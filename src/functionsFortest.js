@@ -27,13 +27,14 @@ function sumFun() {
 
 export const sum1 = sumFun();
 
-export function changeColor(colors) {
+export const changeColor = (colors) => {
   let i = 0;
 
   return (event) => {
-    const elEvent = event.target.style.color;
-    elEvent.target.style.color = colors[i];
+    /* eslint-disable */
+    event.target.style.color = colors[i];
+    /* eslint-disable */
     i += 1;
     if (i >= colors.length) i = 0;
   };
-}
+};
