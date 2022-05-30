@@ -360,3 +360,53 @@ const getSortedCountry = (arr) => {
 console.log(palindromeInline(testWord2));
 console.log(getFilteredHotels(germany, hotels));
 console.log(getSortedCountry(hotels));
+
+const obj1 = {
+  a: 'a',
+  b: {
+    a: 'a',
+    b: 'b',
+    c: {
+      a: 1,
+    },
+  },
+};
+const obj2 = {
+  b: {
+    c: {
+      a: 1,
+    },
+    b: 'b',
+    a: 'a',
+  },
+  a: 'a',
+};
+const obj3 = {
+  a: {
+    c: {
+      a: 'a',
+    },
+    b: 'b',
+    a: 'a',
+  },
+  b: 'b',
+};
+
+const deepEqual = (object1, object2) => {
+  if (object1 === object2) {
+    return true;
+  } else {
+    for (let key in object1) {
+      const hasProperty = Object.prototype.hasOwnProperty.call(object2, key);
+      if (!hasProperty) return false;
+      if (typeof object1[key] === 'object' && typeof object2[key] === 'object') {
+        return deepEqual(object1[key], object2[key]);
+      } else if (object1[key] !== object2[key]) return false;
+    }
+  }
+
+  return true;
+};
+
+console.log(deepEqual(obj1, obj2));
+console.log(deepEqual(obj1, obj3));
