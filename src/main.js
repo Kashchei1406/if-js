@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { changeColor, max, min, palindrome, sum1 } from './functionsFortest.js';
-/* eslint-disable */
+import { hotels, studentsData, data } from './arrays.js';
+/* eslint-enable */
 
 let user = 'John Doe';
 console.log(user);
@@ -26,10 +27,10 @@ Boolean(test);
 // I think in variable 'test' contains true
 console.log(test);
 
-const arr = [2, 3, 5, 8];
+const testArr = [2, 3, 5, 8];
 let sum = null;
-for (let i = 0; i < arr.length; i += 1) {
-  sum += arr[i];
+for (let i = 0; i < testArr.length; i += 1) {
+  sum += testArr[i];
 }
 console.log(sum);
 
@@ -120,233 +121,29 @@ console.log(changeDate(date));
 console.log(changeDate1(date));
 console.log(changeDate1(date1));
 
-const data = [
-  {
-    country: 'Russia',
-    city: 'Saint Petersburg',
-    hotel: 'Hotel Leopold',
-  },
-  {
-    country: 'Spain',
-    city: 'Santa Cruz de Tenerife',
-    hotel: 'Apartment Sunshine',
-  },
-  {
-    country: 'Slowakia',
-    city: 'Vysokie Tatry',
-    hotel: 'Villa Kunerad',
-  },
-  {
-    country: 'Germany',
-    city: 'Berlin',
-    hotel: 'Hostel Friendship',
-  },
-  {
-    country: 'Indonesia',
-    city: 'Bali',
-    hotel: 'Ubud Bali Resort&SPA',
-  },
-  {
-    country: 'Netherlands',
-    city: 'Rotterdam',
-    hotel: 'King Kong Hostel',
-  },
-  {
-    country: 'Marocco',
-    city: 'Ourika',
-    hotel: 'Rokoko Hotel',
-  },
-  {
-    country: 'Germany',
-    city: 'Berlin',
-    hotel: 'Hotel Rehberge Berlin Mitte',
-  },
-];
-
 const inputText = 'Berlin';
 
-const hotelFilter = (str, arr) => {
-  const result = arr.map((item) => `${item.country}, ${item.city}, ${item.hotel}`);
+const hotelFilter = (str, arrHotel) => {
+  const result = arrHotel.map((item) => `${item.country}, ${item.city}, ${item.hotel}`);
 
   return result.filter((item) => item.toLowerCase().includes(str.toLowerCase()));
 };
 
 console.log(hotelFilter(inputText, data));
 
-const hotels = [
-  {
-    name: 'Hotel Leopold',
-    city: 'Saint Petersburg',
-    country: 'Russia',
-  },
-  {
-    name: 'Apartment Sunshine',
-    city: 'Santa Cruz de Tenerife',
-    country: 'Spain',
-  },
-  {
-    name: 'Villa Kunerad',
-    city: 'Vysokie Tatry',
-    country: 'Slowakia',
-  },
-  {
-    name: 'Hostel Friendship',
-    city: 'Berlin',
-    country: 'Germany',
-  },
-  {
-    name: 'Radisson Blu Hotel',
-    city: 'Kyiv',
-    country: 'Ukraine',
-  },
-  {
-    name: 'Paradise Hotel',
-    city: 'Guadalupe',
-    country: 'Mexico',
-  },
-  {
-    name: 'Hotel Grindewald',
-    city: 'Interlaken',
-    country: 'Switzerland',
-  },
-  {
-    name: 'The Andaman Resort',
-    city: 'Port Dickson',
-    country: 'Malaysia',
-  },
-  {
-    name: 'Virgin Hotel',
-    city: 'Chicago',
-    country: 'USA',
-  },
-  {
-    name: 'Grand Beach Resort',
-    city: 'Dubai',
-    country: 'United Arab Emirates',
-  },
-  {
-    name: 'Shilla Stay',
-    city: 'Seoul',
-    country: 'South Korea',
-  },
-  {
-    name: 'San Firenze Suites',
-    city: 'Florence',
-    country: 'Italy',
-  },
-  {
-    name: 'The Andaman Resort',
-    city: 'Port Dickson',
-    country: 'Malaysia',
-  },
-  {
-    name: 'Black Penny Villas',
-    city: 'BTDC, Nuca Dua',
-    country: 'Indonesia',
-  },
-  {
-    name: 'Koko Hotel',
-    city: 'Tokyo',
-    country: 'Japan',
-  },
-  {
-    name: 'Ramada Plaza',
-    city: 'Istanbul',
-    country: 'Turkey',
-  },
-  {
-    name: 'Waikiki Resort Hotel',
-    city: 'Hawaii',
-    country: 'USA',
-  },
-  {
-    name: 'Puro Hotel',
-    city: 'Krakow',
-    country: 'Poland',
-  },
-  {
-    name: 'Asma Suites',
-    city: 'Santorini',
-    country: 'Greece',
-  },
-  {
-    name: 'Cityden Apartments',
-    city: 'Amsterdam',
-    country: 'Netherlands',
-  },
-  {
-    name: 'Mandarin Oriental',
-    city: 'Miami',
-    country: 'USA',
-  },
-  {
-    name: 'Concept Terrace Hotel',
-    city: 'Rome',
-    country: 'Italy',
-  },
-  {
-    name: 'Ponta Mar Hotel',
-    city: 'Fortaleza',
-    country: 'Brazil',
-  },
-  {
-    name: 'Four Seasons Hotel',
-    city: 'Sydney',
-    country: 'Australia',
-  },
-  {
-    name: 'Le Meridien',
-    city: 'Nice',
-    country: 'France',
-  },
-  {
-    name: 'Apart Neptun',
-    city: 'Gdansk',
-    country: 'Poland',
-  },
-  {
-    name: 'Lux Isla',
-    city: 'Ibiza',
-    country: 'Spain',
-  },
-  {
-    name: 'Nox Hostel',
-    city: 'London',
-    country: 'UK',
-  },
-  {
-    name: 'Leonardo Vienna',
-    city: 'Vienna',
-    country: 'Austria',
-  },
-  {
-    name: 'Adagio Aparthotel',
-    city: 'Edinburgh',
-    country: 'UK',
-  },
-  {
-    name: 'Steigenberger Hotel',
-    city: 'Hamburg',
-    country: 'Germany',
-  },
-];
 const germany = 'Germany';
 const testWord2 = 'шалаш';
 
-const palindromeInline = (str) => {
-  return str === str.split('').reverse().join('');
-};
+const palindromeInline = (str) => str === str.split('').reverse().join('');
 
-const getFilteredHotels = (str, arr) => {
-  return arr
-    .filter((item) => Object.values(item).includes(str))
-    .map((item) => Object.values(item).reverse());
-};
+const getFilteredHotels = (str, arrHotels) => arrHotels
+  .filter((item) => Object.values(item).includes(str))
+  .map((item) => Object.values(item).reverse());
 
-const getSortedCountry = (arr) => {
-  let result = {};
-  for (let i = 0; i < arr.length; i++) {
-    const { country, city } = arr[i];
+const getSortedCountry = (array) => {
+  const result = {};
+  for (let i = 0; i < array.length; i += 1) {
+    const { country, city } = array[i];
     if (result[country]) {
       result[country].push(city);
     } else {
@@ -395,18 +192,71 @@ const obj3 = {
 const deepEqual = (object1, object2) => {
   if (object1 === object2) {
     return true;
-  } else {
-    for (let key in object1) {
-      const hasProperty = Object.prototype.hasOwnProperty.call(object2, key);
-      if (!hasProperty) return false;
-      if (typeof object1[key] === 'object' && typeof object2[key] === 'object') {
-        return deepEqual(object1[key], object2[key]);
-      } else if (object1[key] !== object2[key]) return false;
-    }
   }
+
+  /* eslint-disable */
+  for (const key in object1) {
+    const property = Object.prototype.hasOwnProperty.call(object2, key);
+    if (!property) return false;
+    if (typeof object1[key] === 'object' && typeof object2[key] === 'object') {
+      return deepEqual(object1[key], object2[key]);
+    }
+    if (object1[key] !== object2[key]) return false;
+  }
+  /* eslint-enable */
 
   return true;
 };
 
 console.log(deepEqual(obj1, obj2));
 console.log(deepEqual(obj1, obj3));
+
+class User {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+class Student extends User {
+  constructor(firstName, lastName, admissionYear, courseName) {
+    super(firstName, lastName);
+    this.admissionYear = admissionYear;
+    this.courseName = courseName;
+  }
+
+  get course() {
+    return new Date().getFullYear() - this.admissionYear;
+  }
+}
+
+class Students {
+  constructor(students) {
+    this.students = Students.creatorStudents(students);
+  }
+
+  static creatorStudents(arr) {
+    const students = [];
+    for (let i = 0; i < arr.length; i += 1) {
+      const {
+        firstName, lastName, admissionYear, courseName,
+      } = arr[i];
+      students.push(new Student(firstName, lastName, admissionYear, courseName));
+    }
+
+    return students;
+  }
+
+  get getInfo() {
+    return this.students
+      .sort((a, b) => a.course - b.course)
+      .map((item) => `${item.fullName} - ${item.courseName}, ${item.course} курс`);
+  }
+}
+
+const students = new Students(studentsData);
+console.log(students.getInfo);
