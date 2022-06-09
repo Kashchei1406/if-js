@@ -194,7 +194,6 @@ const deepEqual = (object1, object2) => {
     return true;
   }
 
-  /* eslint-disable */
   for (const key in object1) {
     const property = Object.prototype.hasOwnProperty.call(object2, key);
     if (!property) return false;
@@ -203,7 +202,6 @@ const deepEqual = (object1, object2) => {
     }
     if (object1[key] !== object2[key]) return false;
   }
-  /* eslint-enable */
 
   return true;
 };
@@ -260,3 +258,4 @@ class Students {
 
 const students = new Students(studentsData);
 console.log(students.getInfo);
+console.log(typeof typeof null);
