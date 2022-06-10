@@ -21,6 +21,7 @@ module.exports = {
     rules: {
         "no-console": 'off',
         "guard-for-in": 'off',
-        "no-restricted-syntax": 'warn',
+        'no-restricted-syntax': 'warn',
+        'no-param-reassign': 'warn'
     }
  }
