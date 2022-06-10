@@ -13,12 +13,14 @@ module.exports = {
     ],
     parserOptions: {
         ecmaVersion: 6,
-        sourceType: "module",
+        sourceType: 'module',
         ecmaFeatures: {
             jsx: true
         }
     },
     rules: {
-        "no-console": "off"
+        "no-console": 'off',
+        "guard-for-in": 'off',
+        "no-restricted-syntax": 'warn',
     }
  }
