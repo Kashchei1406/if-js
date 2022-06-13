@@ -273,6 +273,7 @@ const colorsObject = {
         value: this.data[0],
       };
     }
+
     for (let i = 0; i < this.data.length; i += 1) {
       if (this.id === this.data[this.data.length - 1]) {
         return {
@@ -288,6 +289,7 @@ const colorsObject = {
         };
       }
     }
+
     return 'some problem';
   },
 };
