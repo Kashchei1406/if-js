@@ -31,9 +31,7 @@ export const changeColor = (colors) => {
   let i = 0;
 
   return (event) => {
-    /* eslint-disable */
     event.target.style.color = colors[i];
-    /* eslint-disable */
     i += 1;
     if (i >= colors.length) i = 0;
   };

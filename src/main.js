@@ -136,9 +136,10 @@ const testWord2 = 'шалаш';
 
 const palindromeInline = (str) => str === str.split('').reverse().join('');
 
-const getFilteredHotels = (str, arrHotels) => arrHotels
-  .filter((item) => Object.values(item).includes(str))
-  .map((item) => Object.values(item).reverse());
+const getFilteredHotels = (str, arrHotels) =>
+  arrHotels
+    .filter((item) => Object.values(item).includes(str))
+    .map((item) => Object.values(item).reverse());
 
 const getSortedCountry = (array) => {
   const result = {};
@@ -240,9 +241,7 @@ class Students {
   static creatorStudents(arr) {
     const students = [];
     for (let i = 0; i < arr.length; i += 1) {
-      const {
-        firstName, lastName, admissionYear, courseName,
-      } = arr[i];
+      const { firstName, lastName, admissionYear, courseName } = arr[i];
       students.push(new Student(firstName, lastName, admissionYear, courseName));
     }
 
@@ -258,4 +257,51 @@ class Students {
 
 const students = new Students(studentsData);
 console.log(students.getInfo);
-console.log(typeof typeof null);
+
+const colorsObject = {
+  data: ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'],
+  [Symbol.iterator]() {
+    return this;
+  },
+
+  next(id) {
+    this.id = id.style.color;
+
+    if (!this.id) {
+      return {
+        done: false,
+        value: this.data[0],
+      };
+    }
+
+    for (let i = 0; i < this.data.length; i += 1) {
+      if (this.id === this.data[this.data.length - 1]) {
+        return {
+          done: false,
+          value: this.data[0],
+        };
+      }
+
+      if (this.id === this.data[i]) {
+        return {
+          done: false,
+          value: this.data[i + 1],
+        };
+      }
+    }
+
+    return 'some problem';
+  },
+};
+
+const text4 = document.getElementById('text4');
+const text5 = document.getElementById('text5');
+const text6 = document.getElementById('text6');
+
+const changeStyle = (id) => (event) => {
+  event.target.style.color = colorsObject.next(id).value;
+};
+
+text4.addEventListener('click', changeStyle(text4));
+text5.addEventListener('click', changeStyle(text5));
+text6.addEventListener('click', changeStyle(text6));
