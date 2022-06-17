@@ -22,6 +22,9 @@ module.exports = {
         "no-console": 'off',
         "guard-for-in": 'off',
         'no-restricted-syntax': 'warn',
-        'no-param-reassign': 'warn'
+        'no-param-reassign': 'warn',
+        'import/extensions': 'warn',
+        'max-classes-per-file': 'warn',
+        'no-use-before-define': 'warn'
     }
  }

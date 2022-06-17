@@ -1,7 +1,7 @@
-/* eslint-disable */
-import { changeColor, max, min, palindrome, sum1 } from './functionsFortest.js';
+import {
+  changeColor, max, min, palindrome, sum1,
+} from './functionsFortest.js';
 import { hotels, studentsData, data } from './arrays.js';
-/* eslint-enable */
 
 let user = 'John Doe';
 console.log(user);
@@ -136,10 +136,9 @@ const testWord2 = 'шалаш';
 
 const palindromeInline = (str) => str === str.split('').reverse().join('');
 
-const getFilteredHotels = (str, arrHotels) =>
-  arrHotels
-    .filter((item) => Object.values(item).includes(str))
-    .map((item) => Object.values(item).reverse());
+const getFilteredHotels = (str, arrHotels) => arrHotels
+  .filter((item) => Object.values(item).includes(str))
+  .map((item) => Object.values(item).reverse());
 
 const getSortedCountry = (array) => {
   const result = {};
@@ -241,7 +240,9 @@ class Students {
   static creatorStudents(arr) {
     const students = [];
     for (let i = 0; i < arr.length; i += 1) {
-      const { firstName, lastName, admissionYear, courseName } = arr[i];
+      const {
+        firstName, lastName, admissionYear, courseName,
+      } = arr[i];
       students.push(new Student(firstName, lastName, admissionYear, courseName));
     }
 
