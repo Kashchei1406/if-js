@@ -25,6 +25,5 @@ module.exports = {
         'no-param-reassign': 'warn',
         'import/extensions': 'warn',
         'max-classes-per-file': 'warn',
-        'no-use-before-define': 'warn'
     }
- }
+}
