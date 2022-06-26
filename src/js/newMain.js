@@ -7,6 +7,7 @@ const createElements = () => {
     const {
       id, name, city, country, imageUrl,
     } = dataHotels[i];
+
     guestsLoveContainer.innerHTML += `
         <div id="${id}" class="guests-loves-column column-item col-3 col-md-6">
             <div class="guests-loves-item-image">
@@ -18,8 +19,7 @@ const createElements = () => {
             <div class="guests-loves-hotel-destination">
                 <a href="#">${country}, ${city}</a>
             </div>
-        </div>  
-        `;
+        </div>`;
   }
 };
 
