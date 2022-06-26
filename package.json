@@ -7,9 +7,9 @@
     "test": "jest --env=jsdom",
     "prettier": "prettier --write src/**/*.js",
     "lint": "eslint --debug ./src",
-    "lint:write": "eslint --debug ./src --fix",
+    "lint:write": "eslint --debug ./src/js --fix",
     "prepare": "husky install",
-    "app": "prettier --write src/**/*.js && eslint --debug ./src --fix"
+    "app": "prettier --write src/**/*.js && eslint --debug ./src/js --fix"
   },
   "repository": {
     "type": "git",
