@@ -1,6 +1,4 @@
-import {
-  palindrome, min, max, sum1,
-} from '../js/functionsFortest';
+import { palindrome, min, max, sum1 } from '../js/functionsFortest';
 
 describe('test palindrome', () => {
   test('palindrome positive', () => {
