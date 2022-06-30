@@ -10,8 +10,19 @@ let childrenCount = 0;
 let roomsCount = 0;
 let adultsCount = 0;
 
-amount.addEventListener('click', () => {
+amount.addEventListener('click', (event) => {
   modalWindowAmount.classList.toggle('modal--visible');
+  event.stopPropagation();
+
+  if (modalWindowAmount.classList.contains('modal--visible')) {
+    modalWindowAmount.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    document.body.addEventListener('click', () => {
+      modalWindowAmount.classList.remove('modal--visible');
+    });
+  }
 });
 
 const addSelect = () => {

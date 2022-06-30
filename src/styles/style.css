@@ -306,11 +306,11 @@ input[type="date"] {
 }
 
 .modal-window {
-  width: 21%;
+  width: 80%;
   position: absolute;
   background-color: #ffffff;
   top: 70px;
-  right: 16%;
+  right: 0;
   border-radius: 8px;
   cursor: default;
   display: none;
@@ -426,7 +426,6 @@ input[type="date"] {
 }
 
 .app {
-  margin-top: 129px;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -1083,11 +1082,6 @@ footer {
     margin-top: 56px;
   }
 
-  .app{
-
-    position: static;
-  }
-
   .head-caption h1 {
     font-size: 30px;
   }
@@ -1213,8 +1207,13 @@ footer {
     font-size: 19px;
   }
 
+  .modal-window{
+    width: 100%;
+    top: 55px;
+  }
+
   .app {
-    margin-top: 32px;
+    bottom: 10px;
   }
 
   .title-container {
