@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+.col-1 {
+  width: calc((100% / 12) * 1 - 8px);
+}
+
+.col-2 {
+  width: calc((100% / 12) * 2 - 8px);
+}
+
 .col-3 {
   width: calc((100% / 12) * 3 - 8px);
 }
@@ -232,6 +240,7 @@ select:focus {
 }
 
 .head-input-container {
+  position: relative;
   width: 100%;
   height: 64px;
   margin-top: 24px;
@@ -296,12 +305,97 @@ input[type="date"] {
   transition: 0.2s;
 }
 
-.head-input-amount select {
-  width: 97%;
-  height: 92%;
-  border: 1px solid #ffffff;
-  font-size: 18px;
-  text-align: center;
+.modal-window {
+  width: 80%;
+  position: absolute;
+  background-color: #ffffff;
+  top: 70px;
+  right: 0;
+  border-radius: 8px;
+  cursor: default;
+  display: none;
+  z-index: 3;
+}
+
+.modal-window li {
+  font-size: 16px;
+  color: black;
+  list-style: none;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 1;
+}
+
+.toggle {
+  width: 40%;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-window li svg {
+  width: 30px;
+  height: 30px;
+  fill: #cecece;
+  stroke: #cecece;
+}
+
+.modal-window li svg:hover {
+  stroke: #3077c6;
+  fill: #3077c6;
+  cursor: pointer;
+}
+
+.modal-window li span {
+  margin: 0 5px;
+}
+
+.toggle-plus,
+.toggle-plus {
+  stroke: black;
+  fill: black;
+}
+
+.modal-window li:last-child {
+  flex-wrap: wrap;
+  display: none;
+}
+
+.modal-window label{
+  width: 100%;
+  font-size: 12px;
+}
+
+.modal-window select {
+  height: 30px;
+  width: 45%;
+  margin-top: 12px;
+  }
+
+.modal--visible {
+  display: block; !important;
+}
+
+.head-input-amount p {
+  z-index: 3;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.head-input-amount {
+  width: 25%;
+  height: 64px;
+  border: 3px solid #ffffff;
+  border-radius: 8px;
+  transition: 0.2s;
+  position: relative;
 }
 
 .button-head {
@@ -332,7 +426,6 @@ input[type="date"] {
 }
 
 .app {
-  margin-top: 129px;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -989,11 +1082,6 @@ footer {
     margin-top: 56px;
   }
 
-  .app{
-
-    position: static;
-  }
-
   .head-caption h1 {
     font-size: 30px;
   }
@@ -1119,8 +1207,13 @@ footer {
     font-size: 19px;
   }
 
+  .modal-window{
+    width: 100%;
+    top: 55px;
+  }
+
   .app {
-    margin-top: 32px;
+    bottom: 10px;
   }
 
   .title-container {
