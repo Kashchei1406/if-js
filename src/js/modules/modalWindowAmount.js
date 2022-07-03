@@ -71,6 +71,7 @@ btnAmount.forEach((btn) => {
       roomsCount -= 1;
       spanRoom.forEach((el) => (el.innerText = roomsCount));
     }
+
     if (event.currentTarget.dataset.name === 'room-plus' && roomsCount < 30) {
       roomsCount += 1;
       spanRoom.forEach((el) => (el.innerText = roomsCount));
