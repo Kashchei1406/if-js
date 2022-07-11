@@ -3,6 +3,8 @@ import insertCards from './insrertCards.js';
 
 const availableHotelsContent = document.getElementById('available-hotels-content');
 const availableHotels = document.getElementById('available');
+const headerHeight = getComputedStyle(document.getElementsByTagName('header')[0]).height;
+console.log(headerHeight);
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -17,6 +19,10 @@ form.addEventListener('submit', (event) => {
       insertCards(availableHotelsContent, result);
 
       availableHotels.style.display = 'flex';
+      window.scrollTo({
+        top: parseInt(headerHeight, 10),
+        behavior: 'smooth',
+      });
     })
     .catch((err) => {
       console.log(err);
