@@ -47,10 +47,10 @@
                 <h1>Discover stays<br />to live, work or just relax</h1>
               </div>
               <div class="head-form col-12">
-                <form method="get">
+                <form name="main" method="get">
                   <div class="head-form-container">
                     <div class="head-form-label-hotel">
-                      <label for="hotel">
+                      <label for="hotel-input">
                         <svg>
                           <use href="./src/images/icons.svg#loup"></use>
                         </svg>
@@ -58,16 +58,13 @@
                       >
                     </div>
                     <div class="head-form-label-date">
-                      <label
-                        ><span
-                          >Check&ndash;in &mdash; Check&ndash;out</span
-                        ></label
-                      >
+                      <label><span>Check&ndash;in &mdash; Check&ndash;out</span></label>
                     </div>
                     <div class="head-input-container col-12">
                       <div class="head-input-hotel col-md-12">
                         <input
-                          id="hotel"
+                          id="hotel-input"
+                          name="hotel"
                           placeholder="New York"
                           required
                           type="text"
@@ -76,26 +73,19 @@
                       <div class="head-input-date col-md-12 check-in">
                         <div class="head-input-date-item">
                           <label for="date-check-in">Check&mdash;in date</label>
-                          <input
-                            class="col-md-6"
-                            id="date-check-in"
-                            required
-                            type="date"
-                          />
+                          <input class="col-md-6" id="date-check-in" type="date" />
                         </div>
                         <div class="head-input-date-item check-out">
-                          <label for="date-check-out"
-                            >Check&mdash;out date</label
-                          >
-                          <input
-                            class="col-md-6"
-                            id="date-check-out"
-                            type="date"
-                          /><
+                          <label for="date-check-out">Check&mdash;out date</label>
+                          <input class="col-md-6" id="date-check-out" type="date" /><
                         </div>
                       </div>
                       <div id="amount" class="head-input-amount col-md-12" data-path="main-amount">
-                        <p><span class="adults-count">0</span> Adults &mdash; <span class="children-count">0</span> Children &mdash; <span class="rooms-count">0</span> Room</p>
+                        <p>
+                          <span class="adults-count">0</span> Adults &mdash;
+                          <span class="children-count">0</span> Children &mdash;
+                          <span class="rooms-count">0</span> Room
+                        </p>
                         <div id="modalAmount" class="modal-window">
                           <ul>
                             <li>
@@ -135,7 +125,9 @@
                               </div>
                             </li>
                             <li id="li-baby-age">
-                              <label for="baby-age">What is the age of the child you're travelling with?</label>
+                              <label for="baby-age"
+                                >What is the age of the child you're travelling with?</label
+                              >
                               <select name="baby-age" id="baby-age" data-index="0">
                                 <option value="0">0 years old</option>
                                 <option value="1">1 years old</option>
@@ -344,6 +336,71 @@
           </div>
         </div>
       </header>
+      <section id="available" class="available-hotels">
+        <div class="container col-12">
+          <div class="title-container">
+            <div class="caption-block">
+              <h2>Available hotels</h2>
+            </div>
+          </div>
+          <div id="available-hotels-content" class="colum-container">
+            <div class="arrow">
+              <svg
+                      fill="none"
+                      height="49"
+                      viewBox="0 0 48 49"
+                      width="48"
+                      xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_d_1_157)">
+                  <circle cx="24" cy="20.0146" fill="#F3F3F4" r="20" />
+                  <path
+                          d="M15.1765 18L23.3882 24.1588C24.0993 24.6922 25.0771 24.6922 25.7882 24.1588L34 18"
+                          stroke="#383838"
+                          stroke-width="2"
+                  />
+                </g>
+                <defs>
+                  <filter
+                          color-interpolation-filters="sRGB"
+                          filterUnits="userSpaceOnUse"
+                          height="48"
+                          id="filter0_d_1_157"
+                          width="48"
+                          x="0"
+                          y="0.0146484"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                            in="SourceAlpha"
+                            result="hardAlpha"
+                            type="matrix"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="2" />
+                    <feColorMatrix
+                            type="matrix"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                    />
+                    <feBlend
+                            in2="BackgroundImageFix"
+                            mode="normal"
+                            result="effect1_dropShadow_1_157"
+                    />
+                    <feBlend
+                            in="SourceGraphic"
+                            in2="effect1_dropShadow_1_157"
+                            mode="normal"
+                            result="shape"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="offer block">
         <div class="container col-12">
           <div class="title-container">
@@ -352,9 +409,7 @@
             </div>
           </div>
           <div class="colum-container">
-            <div
-              class="colum-item-support column-item item-offer col-3 col-md-6 col-sm-6"
-            >
+            <div class="colum-item-support column-item item-offer col-3 col-md-6 col-sm-6">
               <div class="item-icon-support">
                 <svg>
                   <use href="../src/images/icons.svg#support"></use>
@@ -362,9 +417,7 @@
               </div>
               <div class="item-text-offer">Support 24/7</div>
             </div>
-            <div
-              class="colum-item-communicate column-item item-offer col-3 col-md-6 col-sm-6"
-            >
+            <div class="colum-item-communicate column-item item-offer col-3 col-md-6 col-sm-6">
               <div class="item-icon-communicate">
                 <svg>
                   <use href="../src/images/icons.svg#communicate"></use>
@@ -372,9 +425,7 @@
               </div>
               <div class="item-text-offer">Communicate directly</div>
             </div>
-            <div
-              class="colum-item-book column-item item-offer col-3 col-md-6 col-sm-6"
-            >
+            <div class="colum-item-book column-item item-offer col-3 col-md-6 col-sm-6">
               <div class="item-icon-book">
                 <svg>
                   <use href="../src/images/icons.svg#book"></use>
@@ -382,9 +433,7 @@
               </div>
               <div class="item-text-offer">Book online</div>
             </div>
-            <div
-              class="colum-item-reviews column-item item-offer col-3 col-md-6 col-sm-6"
-            >
+            <div class="colum-item-reviews column-item item-offer col-3 col-md-6 col-sm-6">
               <div class="item-icon-reviews">
                 <svg>
                   <use href="../src/images/icons.svg#reviews"></use>
@@ -589,9 +638,7 @@
                   <use href="./src/images/icons.svg#esc"></use>
                 </svg>
               </div>
-              <div class="sign-in-text">
-                Sign up and get 20% off your first booking
-              </div>
+              <div class="sign-in-text">Sign up and get 20% off your first booking</div>
               <div class="sign-in-btn">
                 <button class="secondary-bnt">Sign up</button>
               </div>
@@ -604,15 +651,12 @@
           <div class="title-container col-12">
             <div class="caption-block">
               <h2>
-                <span class="big-text">Guests reviews</span
-                ><span class="small-text">Reviews</span>
+                <span class="big-text">Guests reviews</span><span class="small-text">Reviews</span>
               </h2>
             </div>
           </div>
           <div class="colum-container col-12">
-            <div
-              class="guests-reviews-column column-item col-4 col-md-6 col-sm-6"
-            >
+            <div class="guests-reviews-column column-item col-4 col-md-6 col-sm-6">
               <div class="guests-reviews-image">
                 <img alt="photo of hotel at the Bali" src="src/images/balli.png" />
                 <div class="price"><a href="#">From 250 USD</a></div>
@@ -647,22 +691,16 @@
                 </div>
                 <div class="text-review">
                   <p>
-                    Great location, really pleasant and clean rooms, but the
-                    thing that makes this such a good place to stay are the
-                    staff. All of the people are incredibly helpful and generous
-                    with their time and advice.
+                    Great location, really pleasant and clean rooms, but the thing that makes this
+                    such a good place to stay are the staff. All of the people are incredibly
+                    helpful and generous with their time and advice.
                   </p>
                 </div>
               </div>
             </div>
-            <div
-              class="guests-reviews-column column-item col-4 col-md-6 col-sm-6"
-            >
+            <div class="guests-reviews-column column-item col-4 col-md-6 col-sm-6">
               <div class="guests-reviews-image">
-                <img
-                  alt="photo of hotel at the Bali"
-                  src="src/images/rotterdam.png"
-                />
+                <img alt="photo of hotel at the Bali" src="src/images/rotterdam.png" />
                 <div class="price"><a href="#">From 40 USD</a></div>
               </div>
               <div class="container-padding-24">
@@ -695,23 +733,17 @@
                 </div>
                 <div class="text-review">
                   <p>
-                    I've been in this hostel for a month and here is the best
-                    hostel of all Excellent management of excellent and ethical
-                    staff and bedrooms Bathrooms are always clean and excellent
-                    Most importantly, those who work here are kind and
+                    I've been in this hostel for a month and here is the best hostel of all
+                    Excellent management of excellent and ethical staff and bedrooms Bathrooms are
+                    always clean and excellent Most importantly, those who work here are kind and
                     good-natured.
                   </p>
                 </div>
               </div>
             </div>
-            <div
-              class="guests-reviews-column column-item col-4 col-md-6 col-sm-6"
-            >
+            <div class="guests-reviews-column column-item col-4 col-md-6 col-sm-6">
               <div class="guests-reviews-image">
-                <img
-                  alt="photo of hotel at the Qurika"
-                  src="src/images/qurika.png"
-                />
+                <img alt="photo of hotel at the Qurika" src="src/images/qurika.png" />
                 <div class="price"><a href="#">From 100 USD</a></div>
               </div>
               <div class="container-padding-24">
@@ -744,11 +776,9 @@
                 </div>
                 <div class="text-review">
                   <p>
-                    Efficient, friendly, professional, and appropriately
-                    attentive. Great hotel in a great location. Easy access to
-                    all the surrounding historical sites. Staff is fantastic.
-                    Will definitely stay at this location during my next stay in
-                    Marocco.
+                    Efficient, friendly, professional, and appropriately attentive. Great hotel in a
+                    great location. Easy access to all the surrounding historical sites. Staff is
+                    fantastic. Will definitely stay at this location during my next stay in Marocco.
                   </p>
                 </div>
               </div>
@@ -835,9 +865,7 @@
             <use href="./src/images/icons.svg#logo"></use>
           </svg>
         </div>
-        <div class="sign-in-mob-text">
-          Sign up in the app and get 20% off your first booking
-        </div>
+        <div class="sign-in-mob-text">Sign up in the app and get 20% off your first booking</div>
         <button class="col-3">Install</button>
       </aside>
       <footer class="block">
@@ -882,13 +910,12 @@
               </ul>
             </div>
           </div>
-          <div class="footer-copy">
-            &copy;2020 Triphouse, Inc. All rights reserved
-          </div>
+          <div class="footer-copy">&copy;2020 Triphouse, Inc. All rights reserved</div>
         </div>
       </footer>
     </div>
-  <script src="./src/js/newMain.js" type="module"></script>
-  <script src="./src/js/modules/modalWindowAmount.js"></script>
+    <script src="./src/js/newMain.js" type="module"></script>
+    <script src="./src/js/modules/modalWindowAmount.js" type="module"></script>
+    <script src="./src/js/modules/request.js" type="module"></script>
   </body>
 </html>
