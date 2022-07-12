@@ -4,7 +4,6 @@ import insertCards from './insrertCards.js';
 const availableHotelsContent = document.getElementById('available-hotels-content');
 const availableHotels = document.getElementById('available');
 const headerHeight = getComputedStyle(document.getElementsByTagName('header')[0]).height;
-console.log(headerHeight);
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
