@@ -2,7 +2,6 @@ import createCard from './createCard.js';
 
 export default function insertCards(block, elements) {
   const amountElements = elements.length;
-  console.log(amountElements);
 
   if (amountElements <= 4) {
     for (let i = 0; i < amountElements; i += 1) {
