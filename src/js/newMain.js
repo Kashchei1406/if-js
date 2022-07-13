@@ -22,7 +22,9 @@ const getData = async () => {
   if (dataFromLocalStorage) {
     const hotels = JSON.parse(dataFromLocalStorage);
     insertCards(guestsLoveContainer, hotels);
-  } else {
-    insertCards(guestsLoveContainer, getData());
+
+    return;
   }
+
+  insertCards(guestsLoveContainer, getData());
 }());
