@@ -1,7 +1,6 @@
 const form = document.getElementById('form-file');
 const inputFile = document.getElementById('input');
 
-inputFile.ad
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -12,15 +11,14 @@ form.addEventListener('submit', async (event) => {
   const options = {
     method: 'POST',
     body: formData,
-    mode: 'no-cors',
-    enctype: "multipart/form-data"
+    enctype: 'multipart/form-data',
   };
 
   try {
     const response = await fetch('https://fe-student-api.herokuapp.com/api/file', options);
     const data = await response.json();
-    console.log(data)
-  }catch (err){
-    console.log(err)
+    console.log(data);
+  } catch (err) {
+    console.log(err);
   }
 });
