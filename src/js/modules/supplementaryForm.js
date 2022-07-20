@@ -1,4 +1,4 @@
-const form = document.getElementById('form-file');
+const form = document.getElementById('formHelpers-file');
 const inputFile = document.getElementById('input');
 
 form.addEventListener('submit', async (event) => {
@@ -10,7 +10,7 @@ form.addEventListener('submit', async (event) => {
   const options = {
     method: 'POST',
     body: formData,
-    enctype: 'multipart/form-data',
+    enctype: 'multipart/formHelpers-data',
   };
 
   try {

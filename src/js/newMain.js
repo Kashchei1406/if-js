@@ -1,8 +1,8 @@
 import insertCards from './modules/insrertCards.js';
+import { getData, searchResponse } from './modules/api.js';
 import {
-  getData, searchResponse, availableHotels, availableHotelsContent, headerHeight,
-} from './modules/api.js';
-import { form, input } from './modules/form.js';
+  form, input, availableHotels, availableHotelsContent, scrollToResult,
+} from './modules/formHelpers.js';
 import { resetAmount } from './modules/modalWindowAmount.js';
 
 const guestsLoveContainer = document.getElementById('guests-love-container');
@@ -33,8 +33,5 @@ form.addEventListener('submit', async (event) => {
   insertCards(availableHotelsContent, response);
 
   availableHotels.style.display = 'flex';
-  window.scrollTo({
-    top: parseInt(headerHeight, 10),
-    behavior: 'smooth',
-  });
+  scrollToResult();
 });

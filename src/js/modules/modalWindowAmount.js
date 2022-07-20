@@ -5,7 +5,6 @@ const amount = document.getElementById('amount');
 const modalWindowAmount = document.getElementById('modalAmount');
 const btnAmount = modalWindowAmount.querySelectorAll('svg');
 const liBabyAge = document.getElementById('li-baby-age');
-const listSelects = Array.from(liBabyAge.querySelectorAll('select'));
 
 let childrenCount = 0;
 let roomsCount = 0;
@@ -34,6 +33,8 @@ const addSelect = () => {
 };
 
 const removeSelect = () => {
+  const listSelects = Array.from(liBabyAge.querySelectorAll('select'));
+
   listSelects.forEach((select) => {
     if (select.dataset.index === `${childrenCount}`) select.remove();
   });
@@ -108,13 +109,17 @@ export function getParameters() {
 }
 
 export const resetAmount = () => {
+  const listSelects = Array.from(liBabyAge.querySelectorAll('select'));
+
   childrenCount = 0;
   adultsCount = 0;
   roomsCount = 0;
+
   spanRoom.forEach((el) => (el.innerText = roomsCount));
   spanChildren.forEach((el) => (el.innerText = childrenCount));
   spanAdult.forEach((el) => (el.innerText = roomsCount));
   listSelects.forEach((select) => {
-    if (select.dataset.index > 0) select.remove();
+    if (select.dataset.index !== '0') select.remove();
   });
+  liBabyAge.style.display = 'none';
 };

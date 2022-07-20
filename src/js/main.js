@@ -1,4 +1,4 @@
-import {
+ import {
   changeColor, max, min, palindrome, sum1,
 } from './functionsFortest.js';
 import { hotels, studentsData, data } from './arrays.js';
