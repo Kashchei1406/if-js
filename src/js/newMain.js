@@ -1,30 +1,40 @@
 import insertCards from './modules/insrertCards.js';
+import {
+  getData, searchResponse, availableHotels, availableHotelsContent, headerHeight,
+} from './modules/api.js';
+import { form, input } from './modules/form.js';
+import { resetAmount } from './modules/modalWindowAmount.js';
 
 const guestsLoveContainer = document.getElementById('guests-love-container');
 
-const getData = async () => {
-  try {
-    const response = await fetch('https://fe-student-api.herokuapp.com/api/hotels/popular');
-    const result = await response.json();
-    localStorage.setItem('hotels', JSON.stringify(result));
-
-    return result;
-  } catch (err) {
-    console.error(err);
-  }
-
-  return null;
-};
-
-(function drawGuestsBlock() {
+(async function drawGuestsBlock() {
   const dataFromLocalStorage = localStorage.getItem('hotels');
 
   if (dataFromLocalStorage) {
     const hotels = JSON.parse(dataFromLocalStorage);
+
     insertCards(guestsLoveContainer, hotels);
 
     return;
   }
 
-  insertCards(guestsLoveContainer, getData());
+  const result = await getData();
+  insertCards(guestsLoveContainer, result);
 }());
+
+form.addEventListener('submit', async (event) => {
+  const destination = input.value.toLowerCase();
+  event.preventDefault();
+  form.reset();
+
+  const response = await searchResponse(destination);
+  availableHotelsContent.innerHTML = '';
+  resetAmount();
+  insertCards(availableHotelsContent, response);
+
+  availableHotels.style.display = 'flex';
+  window.scrollTo({
+    top: parseInt(headerHeight, 10),
+    behavior: 'smooth',
+  });
+});

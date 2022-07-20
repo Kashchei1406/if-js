@@ -5,6 +5,7 @@ const amount = document.getElementById('amount');
 const modalWindowAmount = document.getElementById('modalAmount');
 const btnAmount = modalWindowAmount.querySelectorAll('svg');
 const liBabyAge = document.getElementById('li-baby-age');
+const listSelects = Array.from(liBabyAge.querySelectorAll('select'));
 
 let childrenCount = 0;
 let roomsCount = 0;
@@ -33,8 +34,6 @@ const addSelect = () => {
 };
 
 const removeSelect = () => {
-  const listSelects = Array.from(liBabyAge.querySelectorAll('select'));
-
   listSelects.forEach((select) => {
     if (select.dataset.index === `${childrenCount}`) select.remove();
   });
@@ -42,17 +41,19 @@ const removeSelect = () => {
 
 btnAmount.forEach((btn) => {
   btn.addEventListener('click', (event) => {
-    if (event.currentTarget.dataset.name === 'adult-minus' && adultsCount > 0) {
+    const btnName = event.currentTarget.dataset.name;
+
+    if (btnName === 'adult-minus' && adultsCount > 0) {
       adultsCount -= 1;
       spanAdult.forEach((el) => (el.innerText = adultsCount));
     }
 
-    if (event.currentTarget.dataset.name === 'adult-plus' && adultsCount < 30) {
+    if (btnName === 'adult-plus' && adultsCount < 30) {
       adultsCount += 1;
       spanAdult.forEach((el) => (el.innerText = adultsCount));
     }
 
-    if (event.currentTarget.dataset.name === 'children-minus' && childrenCount > 0) {
+    if (btnName === 'children-minus' && childrenCount > 0) {
       childrenCount -= 1;
 
       childrenCount > 0 ? removeSelect() : (liBabyAge.style.display = 'none');
@@ -60,21 +61,60 @@ btnAmount.forEach((btn) => {
       spanChildren.forEach((el) => (el.innerText = childrenCount));
     }
 
-    if (event.currentTarget.dataset.name === 'children-plus' && childrenCount < 10) {
+    if (btnName === 'children-plus' && childrenCount < 10) {
       childrenCount > 0 ? addSelect() : (liBabyAge.style.display = 'flex');
 
       childrenCount += 1;
       spanChildren.forEach((el) => (el.innerText = childrenCount));
     }
 
-    if (event.currentTarget.dataset.name === 'room-minus' && roomsCount > 0) {
+    if (btnName === 'room-minus' && roomsCount > 0) {
       roomsCount -= 1;
       spanRoom.forEach((el) => (el.innerText = roomsCount));
     }
 
-    if (event.currentTarget.dataset.name === 'room-plus' && roomsCount < 30) {
+    if (btnName === 'room-plus' && roomsCount < 30) {
       roomsCount += 1;
       spanRoom.forEach((el) => (el.innerText = roomsCount));
     }
   });
 });
+
+const getChildrenAge = () => {
+  const selects = Array.from(liBabyAge.querySelectorAll('select'));
+  let selectValue = '';
+
+  for (let i = 0; i < selects.length; i += 1) {
+    if (i === selects.length - 1 || childrenCount === 1) {
+      selectValue += `${selects[i].options.selectedIndex}`;
+    } else selectValue += `${selects[i].options.selectedIndex},`;
+  }
+
+  return selectValue;
+};
+
+export function getParameters() {
+  let parameters = '';
+
+  if (adultsCount > 0) {
+    parameters += `&adults=${adultsCount}`;
+
+    if (childrenCount > 0) parameters += `&children=${getChildrenAge()}`;
+  }
+
+  if (roomsCount > 0) parameters += `&rooms=${roomsCount}`;
+
+  return parameters;
+}
+
+export const resetAmount = () => {
+  childrenCount = 0;
+  adultsCount = 0;
+  roomsCount = 0;
+  spanRoom.forEach((el) => (el.innerText = roomsCount));
+  spanChildren.forEach((el) => (el.innerText = childrenCount));
+  spanAdult.forEach((el) => (el.innerText = roomsCount));
+  listSelects.forEach((select) => {
+    if (select.dataset.index > 0) select.remove();
+  });
+};

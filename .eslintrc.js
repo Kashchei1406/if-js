@@ -23,7 +23,7 @@ module.exports = {
         "guard-for-in": 'off',
         'no-restricted-syntax': 'warn',
         'no-param-reassign': 'warn',
-        'import/extensions': 'warn',
+        'import/extensions': 'off',
         'max-classes-per-file': 'warn',
         'no-unused-expressions': 'off',
         'no-return-assign' : 'warn',

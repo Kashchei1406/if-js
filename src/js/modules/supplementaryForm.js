@@ -1,7 +1,6 @@
 const form = document.getElementById('form-file');
 const inputFile = document.getElementById('input');
 
-
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
