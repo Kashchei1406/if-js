@@ -1,10 +1,12 @@
-const spanAdult = Array.from(document.getElementsByClassName('adults-count'));
-const spanChildren = Array.from(document.getElementsByClassName('children-count'));
-const spanRoom = Array.from(document.getElementsByClassName('rooms-count'));
-const amount = document.getElementById('amount');
-const modalWindowAmount = document.getElementById('modalAmount');
-const btnAmount = modalWindowAmount.querySelectorAll('svg');
-const liBabyAge = document.getElementById('li-baby-age');
+import {
+  amount,
+  modalWindowAmount,
+  btnAmount,
+  liBabyAge,
+  spanAdult,
+  spanChildren,
+  spanRoom,
+} from '../constants/amountConstants.js';
 
 let childrenCount = 0;
 let roomsCount = 0;
@@ -82,7 +84,7 @@ btnAmount.forEach((btn) => {
 });
 
 const getChildrenAge = () => {
-  const selects = Array.from(liBabyAge.querySelectorAll('select'));
+  const selects = Array.from(modalWindowAmount.querySelectorAll('select'));
   let selectValue = '';
 
   for (let i = 0; i < selects.length; i += 1) {
@@ -90,7 +92,6 @@ const getChildrenAge = () => {
       selectValue += `${selects[i].options.selectedIndex}`;
     } else selectValue += `${selects[i].options.selectedIndex},`;
   }
-
   return selectValue;
 };
 

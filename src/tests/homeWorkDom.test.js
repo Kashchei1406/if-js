@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { changeColor } from '../js/functionsFortest';
+import { changeColor } from '../examples/javaScript/functionsFortest';
 
 document.body.innerHTML = `
     <p id="text1"></p>
