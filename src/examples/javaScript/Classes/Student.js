@@ -1,5 +1,5 @@
 /* eslint-disable */
-import Teacher from 'Teacher.js';
+import Teacher from './Teacher';
 /* eslint-enable */
 import { users } from '../arrays.js';
 

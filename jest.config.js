@@ -77,7 +77,7 @@ module.exports = {
 
   // An array of file extensions your modules use
   // moduleFileExtensions: [
-  //   "js",
+  //   "javaScript",
   //   "mjs",
   //   "cjs",
   //   "jsx",
